@@ -30,6 +30,9 @@ if (APP_ENV == "development") {
      */
     $app->setDi($di);
 
+
+    include __DIR__ . '/../config/controller.php';
+
     /**
      * Incude Application
      */
@@ -70,6 +73,9 @@ if (APP_ENV == "development") {
          * Assign service locator to the application
          */
         $app->setDi($di);
+
+
+        include __DIR__ . '/../config/controller.php';
 
         /**
          * Incude Application

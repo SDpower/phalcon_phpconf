@@ -9,8 +9,9 @@ return new \Phalcon\Config(array(
         'dbname'     => 'test',
     ),
     'application' => array(
-        'modelsDir'      => __DIR__ . '/../models/',
-        'viewsDir'      => __DIR__ . '/../views/',
-        'baseUri'        => '/phalcon1/',
+        'modelsDir'         => __DIR__ . '/../models/',
+        'viewsDir'          => __DIR__ . '/../views/',
+        'controllersDir'    => __DIR__ . '/../controllers/',
+        'baseUri'           => '/phalcon1/',
     )
 ));

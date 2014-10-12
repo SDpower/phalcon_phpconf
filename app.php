@@ -4,8 +4,6 @@
  * Add your routes here
  */
 $app->get('/', function () use ($app) {
-    //error test
-    throw new Exception("test");
     echo $app['view']->getRender(null, 'index');
 });
 

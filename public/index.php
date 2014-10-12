@@ -1,5 +1,8 @@
 <?php
-if (isset($_SERVER["APP_ENV"]) && $_SERVER["APP_ENV"] == "development") {
+define("APP_ENV",
+    ((isset($_SERVER["APP_ENV"]) && $_SERVER["APP_ENV"] == "development") ?
+        "development":"production"));
+if (APP_ENV == "development") {
     //development
     error_reporting(E_ALL);
     /**
@@ -32,10 +35,6 @@ if (isset($_SERVER["APP_ENV"]) && $_SERVER["APP_ENV"] == "development") {
      */
     include __DIR__ . '/../app.php';
 
-    //Register Debug
-    $debug = new \Phalcon\Debug();
-    $debug->listen();
-    $di['debug'] = $debug;
     /**
      * Handle the request
      */

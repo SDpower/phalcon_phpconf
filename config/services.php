@@ -6,7 +6,12 @@ use Phalcon\DI\FactoryDefault;
 use Phalcon\Db\Adapter\Pdo\Mysql as DbAdapter;
 
 $di = new FactoryDefault();
-
+if (APP_ENV == "development") {
+//Register Debug
+    $debug = new \Phalcon\Debug();
+    $debug->listen();
+    $di['debug'] = $debug;
+}
 /**
  * Sets the view component
  */

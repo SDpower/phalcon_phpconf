@@ -1,0 +1,7 @@
+/tmp/
+/config/config.php
+/.settings/*
+/.project
+/.buildpath
+/vendor
+/composer.lock

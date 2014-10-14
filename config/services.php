@@ -46,3 +46,13 @@ $di['db'] = function () use ($config) {
         "dbname" => $config->database->dbname
     ));
 };
+
+$di['router'] = function() {
+
+    //Use the annotations router
+    $router = new \Phalcon\Mvc\Router\Annotations(false);
+
+    $router->addResource('Index', '/');
+
+    return $router;
+};

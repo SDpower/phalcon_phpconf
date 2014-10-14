@@ -26,4 +26,26 @@ class IndexController extends Phalcon\Mvc\Controller
         echo "Decryption test:".$this->crypt->decrypt($Encryption).' <br />'.PHP_EOL;
 
     }
+
+    /**
+     * @Get("cookie")
+     */
+    public function Cookie()
+    {
+         //Check if the cookie has previously set
+        if ($this->cookies->has('remember-me')) {
+            //Get the cookie
+            $rememberMe = $this->cookies->get('remember-me');
+            //Get the cookie's value
+            $value = $rememberMe->getValue();
+            echo "Value = ".$value.PHP_EOL;
+        } else {
+            $value = time();
+            //Set the cookie 30sec
+            $this->cookies->set('remember-me',$value,time() + 30);
+            echo "Set Cookies : Value = ".$value.PHP_EOL;
+            //Sends the cookies to the client Cookies
+            $this->cookies->send();
+        }
+    }
 }

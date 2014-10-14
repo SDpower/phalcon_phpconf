@@ -53,3 +53,10 @@ $di->set('crypt', function () use ($config) {
     $crypt->setKey($config->encryptionKey);
     return $crypt;
 }, true);
+
+
+$di->set('cookies', function() {
+    $cookies = new Phalcon\Http\Response\Cookies();
+    $cookies->useEncryption(true);
+    return $cookies;
+});

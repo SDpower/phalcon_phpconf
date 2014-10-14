@@ -46,3 +46,10 @@ $di['db'] = function () use ($config) {
         "dbname" => $config->database->dbname
     ));
 };
+
+$di->set('crypt', function () use ($config) {
+    $crypt = new Phalcon\Crypt();
+    //Set a global encryption key
+    $crypt->setKey($config->encryptionKey);
+    return $crypt;
+}, true);

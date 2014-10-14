@@ -13,5 +13,6 @@ return new \Phalcon\Config(array(
         'viewsDir'          => __DIR__ . '/../views/',
         'controllersDir'    => __DIR__ . '/../controllers/',
         'baseUri'           => '',
-    )
+    ),
+    'encryptionKey' => '%31.1e$i86e$f!8jz'
 ));

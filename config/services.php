@@ -60,3 +60,9 @@ $di->set('cookies', function() {
     $cookies->useEncryption(true);
     return $cookies;
 });
+
+$di->setShared('security', function () {
+    $security = new Phalcon\Security();
+    $security->setWorkFactor(12);
+    return $security;
+});

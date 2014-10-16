@@ -48,4 +48,24 @@ class IndexController extends Phalcon\Mvc\Controller
             $this->cookies->send();
         }
     }
+
+    /**
+     *
+     * @Get("hashing")
+     */
+    public function Hashing()
+    {
+        $password = '123456';
+        echo "Password = {$password}"."<br />".PHP_EOL;
+        $hasgPassword = $this->security->hash($password);
+        echo "hasgPassword = {$hasgPassword}"."<br />".PHP_EOL;
+        echo "Test mach: ".
+                ($this->security->checkHash($password, $hasgPassword) ?
+                "true":"false").
+                "<br />".PHP_EOL;
+        echo "Test not mach: ".
+                ($this->security->checkHash('12', $hasgPassword) ?
+                "true":"false").
+                "<br />".PHP_EOL;
+    }
 }
